@@ -7,6 +7,22 @@ var changeState = function (state) {
 		document.getElementById ('countdown').innerHTML = countDownNumber;
 	if (state == 2) {
 		timer = setInterval (function (){countDownNumber = countDownNumber - 1; document.getElementById ('countdown').innerHTML = countDownNumber;  
+			
+			if (countDownNumber > 4 && countDownNumber <= 7) {
+				//be nervous
+				document.getElementById ('nervous').className = 'nervous show' ;			
+			} else {
+				document.getElementById ('nervous').className = 'nervous' ;
+			}
+
+			if (countDownNumber > 1 && countDownNumber <= 4) {
+				//cant wait
+				document.getElementById ('cant-wait').className = 'cant-wait show';
+			} else {
+				document.getElementById ('cant-wait').className = 'cant-wait' ;
+			}
+
+
 			if (countDownNumber<=0) {		 
 				changeState(3)};
 			}, 500);
